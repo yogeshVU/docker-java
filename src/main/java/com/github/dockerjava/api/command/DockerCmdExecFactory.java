@@ -43,6 +43,10 @@ public interface DockerCmdExecFactory extends Closeable {
 
     public InspectContainerCmd.Exec createInspectContainerCmdExec();
 
+    public CheckpointContainerCmd.Exec createCheckpointContainerCmdExec();
+
+    public RestoreContainerCmd.Exec createRestoreContainerCmdExec();
+
     public RemoveContainerCmd.Exec createRemoveContainerCmdExec();
 
     public WaitContainerCmd.Exec createWaitContainerCmdExec();
