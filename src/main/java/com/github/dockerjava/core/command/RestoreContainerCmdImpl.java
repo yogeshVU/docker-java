@@ -46,6 +46,12 @@ public class RestoreContainerCmdImpl extends AbstrDockerCmd<RestoreContainerCmd,
     }
 
     @Override
+    public RestoreContainerCmd withForce(boolean force) {
+        this.force = force;
+        return this;
+    }
+
+    @Override
     public String toString() {
         return "checkpoint " + containerId;
     }

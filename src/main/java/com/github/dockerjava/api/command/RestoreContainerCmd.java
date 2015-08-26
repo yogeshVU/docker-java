@@ -11,6 +11,8 @@ public interface RestoreContainerCmd extends SyncDockerCmd<Void> {
 
 	public RestoreContainerCmd withCriuOptions(CriuOptions criuOptions);
 
+    public RestoreContainerCmd withForce(boolean force);
+
     /**
      * @throws NotFoundException
      *             No such container
