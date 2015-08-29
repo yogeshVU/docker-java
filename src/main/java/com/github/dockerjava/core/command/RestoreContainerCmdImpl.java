@@ -18,7 +18,7 @@ public class RestoreContainerCmdImpl extends AbstrDockerCmd<RestoreContainerCmd,
     @JsonProperty("CriuOpts")
     private CriuOptions criuOptions = new CriuOptions();
 
-    @JsonProperty("Force")
+    @JsonProperty("ForceRestore")
     private boolean force = false;
 
     public RestoreContainerCmdImpl(Exec exec, String containerId) {
