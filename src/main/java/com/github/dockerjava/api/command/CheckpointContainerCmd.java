@@ -18,7 +18,7 @@ public interface CheckpointContainerCmd extends SyncDockerCmd<Void> {
 
     public CheckpointContainerCmd withExternalUnixConnections(boolean allowExtUnix);
 
-    public CheckpointContainerCmd withShellJob(boolean allowShell);
+    public CheckpointContainerCmd withFileLocks(boolean allowShell);
 
     /**
      * @throws NotFoundException

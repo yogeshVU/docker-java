@@ -24,13 +24,13 @@ public class CheckpointContainerCmdImpl extends AbstrDockerCmd<CheckpointContain
     private boolean leaveRunning = false;
 
     @JsonProperty("TcpEstablished")
-    private boolean tcpEstablished = false;
+    private boolean tcpEstablished = true;
 
     @JsonProperty("ExternalUnixConnections")
-    private boolean externalUnixConnections = false;
+    private boolean externalUnixConnections = true;
 
-    @JsonProperty("ShellJob")
-    private boolean shellJob = false;
+    @JsonProperty("FileLocks")
+    private boolean fileLocks = true;
 
     public CheckpointContainerCmdImpl(Exec exec, String containerId) {
         super(exec);
@@ -82,8 +82,8 @@ public class CheckpointContainerCmdImpl extends AbstrDockerCmd<CheckpointContain
     }
 
     @Override
-    public CheckpointContainerCmd withShellJob(boolean shellJob) {
-        this.shellJob = shellJob;
+    public CheckpointContainerCmd withFileLocks(boolean fileLocks) {
+        this.fileLocks = fileLocks;
         return this;
     }
 

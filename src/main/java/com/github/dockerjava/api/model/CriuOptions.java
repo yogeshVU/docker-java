@@ -2,11 +2,6 @@ package com.github.dockerjava.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.github.dockerjava.api.NotFoundException;
-import com.github.dockerjava.api.command.RestoreContainerCmd;
-import com.github.dockerjava.core.command.AbstrDockerCmd;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -24,13 +19,13 @@ public class CriuOptions {
     private String workDirectory = "";
 
     @JsonProperty("TcpEstablished")
-    private boolean tcpEstablished = false;
+    private boolean tcpEstablished = true;
 
     @JsonProperty("ExternalUnixConnections")
-    private boolean externalUnixConnections = false;
+    private boolean externalUnixConnections = true;
 
-    @JsonProperty("ShellJob")
-    private boolean shellJob = false;
+    @JsonProperty("FileLocks")
+    private boolean fileLocks = true;
 
     public CriuOptions() {
         this("");
@@ -41,23 +36,23 @@ public class CriuOptions {
     }
 
     public CriuOptions(String imagesDirectory, String workDirectory) {
-        this(imagesDirectory, workDirectory, false);
+        this(imagesDirectory, workDirectory, true);
     }
 
     public CriuOptions(String imagesDirectory, String workDirectory, boolean tcpEstablished) {
-        this(imagesDirectory, workDirectory, tcpEstablished, false);
+        this(imagesDirectory, workDirectory, tcpEstablished, true);
     }
 
     public CriuOptions(String imagesDirectory, String workDirectory, boolean tcpEstablished, boolean externalUnixConnections) {
-        this(imagesDirectory, workDirectory, tcpEstablished, externalUnixConnections, false);
+        this(imagesDirectory, workDirectory, tcpEstablished, externalUnixConnections, true);
     }
 
-    public CriuOptions(String imagesDirectory, String workDirectory, boolean tcpEstablished, boolean externalUnixConnections, boolean shellJob) {
+    public CriuOptions(String imagesDirectory, String workDirectory, boolean tcpEstablished, boolean externalUnixConnections, boolean fileLocks) {
         this.imagesDirectory = imagesDirectory;
         this.workDirectory = workDirectory;
         this.tcpEstablished = tcpEstablished;
         this.externalUnixConnections = externalUnixConnections;
-        this.shellJob = shellJob;
+        this.fileLocks = fileLocks;
     }
 
     public String getImagesDirectory() {
@@ -76,8 +71,8 @@ public class CriuOptions {
         return externalUnixConnections;
     }
 
-    public boolean isShellJob() {
-        return shellJob;
+    public boolean isFileLocks() {
+        return fileLocks;
     }
 
     public void setImagesDirectory(String imagesDirectory) {
@@ -96,8 +91,8 @@ public class CriuOptions {
         this.externalUnixConnections = externalUnixConnections;
     }
 
-    public void setShellJob(boolean shellJob) {
-        this.shellJob = shellJob;
+    public void setFileLocks(boolean fileLocks) {
+        this.fileLocks = fileLocks;
     }
 
     @Override
