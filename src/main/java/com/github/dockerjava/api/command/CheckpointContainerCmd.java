@@ -14,7 +14,7 @@ public interface CheckpointContainerCmd extends SyncDockerCmd<Void> {
 
     public CheckpointContainerCmd withLeaveRunning(boolean leaveRunning);
 
-    public CheckpointContainerCmd withTcpEstablished(boolean allowTcp);
+    public CheckpointContainerCmd withTCPEstablished(boolean allowTcp);
 
     public CheckpointContainerCmd withExternalUnixConnections(boolean allowExtUnix);
 

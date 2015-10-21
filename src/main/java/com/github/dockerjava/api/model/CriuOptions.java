@@ -18,7 +18,7 @@ public class CriuOptions {
     @JsonProperty("WorkDirectory")
     private String workDirectory = "";
 
-    @JsonProperty("TcpEstablished")
+    @JsonProperty("TCPEstablished")
     private boolean tcpEstablished = true;
 
     @JsonProperty("ExternalUnixConnections")

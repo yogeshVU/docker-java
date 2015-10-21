@@ -23,7 +23,7 @@ public class CheckpointContainerCmdImpl extends AbstrDockerCmd<CheckpointContain
     @JsonProperty("LeaveRunning")
     private boolean leaveRunning = false;
 
-    @JsonProperty("TcpEstablished")
+    @JsonProperty("TCPEstablished")
     private boolean tcpEstablished = true;
 
     @JsonProperty("ExternalUnixConnections")
@@ -70,7 +70,7 @@ public class CheckpointContainerCmdImpl extends AbstrDockerCmd<CheckpointContain
     }
 
     @Override
-    public CheckpointContainerCmd withTcpEstablished(boolean tcpEstablished) {
+    public CheckpointContainerCmd withTCPEstablished(boolean tcpEstablished) {
         this.tcpEstablished = tcpEstablished;
         return this;
     }
